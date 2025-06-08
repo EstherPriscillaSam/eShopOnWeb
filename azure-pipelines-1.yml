@@ -10,9 +10,13 @@ pool:
   name: MyNewPrivatePool
   demands:
     - agent.name -equals LAPTOP-P6MF1LBB
-  vmImage: 'windows-latest'
+    - msbuild
+    - visualstudio
+    - vstest
+    - Agent.Version -gtVersion 2.163.1
+    #vmImage:'windows-latest'
 
-variables:
+variables: 
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
